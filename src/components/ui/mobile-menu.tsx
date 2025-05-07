@@ -24,13 +24,13 @@ export default function MobileMenu({ links }: MobileMenuProps) {
       </SheetTrigger>
       <SheetContent side="right" className="w-[300px] sm:w-[400px]">
         <div className="flex flex-col gap-6 py-6">
-          <h2 className="text-xl font-bold text-green-800">ГКС ТАЙГА</h2>
+          <h2 className="text-xl font-bold text-forest">ГКС ТАЙГА</h2>
           <nav className="flex flex-col gap-4">
             {links.map((link, index) => (
               <Link
                 key={index}
                 to={link.href}
-                className="text-lg font-medium hover:text-green-800 transition-colors py-2 border-b border-gray-100"
+                className="text-lg font-medium hover:text-forest transition-colors py-2 border-b border-gray-100"
                 onClick={() => setOpen(false)}
               >
                 {link.label}

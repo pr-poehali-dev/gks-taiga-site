@@ -14,13 +14,13 @@ const Index = () => {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
-      {/* Навигация */}
+    <div className="flex flex-col min-h-screen">
+      {/* Шапка */}
       <header className="fixed w-full z-50 bg-black/20 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <span className="text-xl font-bold text-white">ГКС ТАЙГА</span>
-          </div>
+          </Link>
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link, index) => (
               <Link 
@@ -32,8 +32,14 @@ const Index = () => {
               </Link>
             ))}
           </nav>
-          <div className="md:hidden">
-            <MobileMenu links={navLinks} />
+          <div className="flex items-center gap-4">
+            <a href="tel:+7XXXXXXXXXX" className="hidden md:flex items-center gap-2 text-white">
+              <Icon name="Phone" size={16} />
+              <span>+7 (XXX) XXX-XX-XX</span>
+            </a>
+            <div className="md:hidden">
+              <MobileMenu links={navLinks} />
+            </div>
           </div>
         </div>
       </header>
@@ -47,7 +53,7 @@ const Index = () => {
           <div className="absolute inset-0 bg-black/30"></div>
         </div>
         <div className="relative container mx-auto px-4 h-full flex flex-col items-center justify-center text-center">
-          <div className="mb-6">
+          <div className="mb-8">
             <h1 className="text-7xl md:text-9xl font-bold text-white hero-text-animated tracking-widest">ТАЙГА</h1>
             <p className="text-xl text-white mt-4">Проверь себя на прочность в лесах Сибири</p>
           </div>
@@ -76,10 +82,12 @@ const Index = () => {
               зодчества и современные технологии строительства.
             </p>
             <div className="flex flex-col md:flex-row justify-center gap-4">
-              <Button variant="outline" className="border-gray-400 text-gray-800">
-                Подробнее о компании
-              </Button>
-              <Button className="bg-green-800 hover:bg-green-900">Наши технологии</Button>
+              <Link to="/about">
+                <Button variant="outline" className="border-gray-400 text-gray-800">
+                  Подробнее о компании
+                </Button>
+              </Link>
+              <Button className="bg-forest hover:bg-forest-dark">Наши технологии</Button>
             </div>
           </div>
         </div>
@@ -92,21 +100,21 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
               <div className="w-12 h-12 bg-green-50 flex items-center justify-center rounded-full mb-4">
-                <Icon name="Timer" className="text-green-800" />
+                <Icon name="Timer" className="text-forest" />
               </div>
               <h3 className="text-xl font-bold mb-2">Быстрое возведение</h3>
               <p className="text-gray-600">Строительство каркасного дома занимает от 2 до 4 месяцев, что в разы быстрее традиционных технологий.</p>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
               <div className="w-12 h-12 bg-green-50 flex items-center justify-center rounded-full mb-4">
-                <Icon name="ThermometerSnowflake" className="text-green-800" />
+                <Icon name="ThermometerSnowflake" className="text-forest" />
               </div>
               <h3 className="text-xl font-bold mb-2">Энергоэффективность</h3>
               <p className="text-gray-600">Современные утеплители и технологии строительства обеспечивают отличную теплоизоляцию и экономию на отоплении.</p>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
               <div className="w-12 h-12 bg-green-50 flex items-center justify-center rounded-full mb-4">
-                <Icon name="Leaf" className="text-green-800" />
+                <Icon name="Leaf" className="text-forest" />
               </div>
               <h3 className="text-xl font-bold mb-2">Экологичность</h3>
               <p className="text-gray-600">Мы используем только сертифицированные природные материалы, безопасные для здоровья и окружающей среды.</p>
@@ -155,13 +163,21 @@ const Index = () => {
                     </div>
                   </div>
                   <p className="text-gray-600 mb-4">Современный каркасный дом с просторной планировкой и панорамными окнами.</p>
-                  <Button variant="outline" className="w-full border-green-800 text-green-800 hover:bg-green-800 hover:text-white">Подробнее</Button>
+                  <Link to={`/projects/${project.name.toLowerCase()}`}>
+                    <Button variant="outline" className="w-full border-forest text-forest hover:bg-forest hover:text-white">
+                      Подробнее
+                    </Button>
+                  </Link>
                 </div>
               </div>
             ))}
           </div>
           <div className="text-center mt-10">
-            <Button variant="default" className="px-8 bg-green-800 hover:bg-green-900">Все проекты домов</Button>
+            <Link to="/projects">
+              <Button variant="default" className="px-8 bg-forest hover:bg-forest-dark">
+                Все проекты домов
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -179,11 +195,11 @@ const Index = () => {
               {icon: "Home", title: "Отделка", desc: "Внешняя и внутренняя отделка дома"}
             ].map((step, idx) => (
               <div key={idx} className="relative p-6 bg-white rounded-lg shadow-sm border border-gray-100">
-                <div className="absolute -top-4 left-6 w-8 h-8 rounded-full bg-green-800 flex items-center justify-center text-white">
+                <div className="absolute -top-4 left-6 w-8 h-8 rounded-full bg-forest flex items-center justify-center text-white">
                   {idx + 1}
                 </div>
                 <div className="pt-4">
-                  <Icon name={step.icon} className="text-green-800 mb-3" />
+                  <Icon name={step.icon} className="text-forest mb-3" />
                   <h3 className="text-lg font-bold mb-2">{step.title}</h3>
                   <p className="text-gray-600 text-sm">{step.desc}</p>
                 </div>
@@ -194,7 +210,7 @@ const Index = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-green-800 text-white">
+      <section className="py-24 bg-forest text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">Построим дом вашей мечты</h2>
           <p className="max-w-2xl mx-auto mb-8 text-gray-200">
@@ -206,7 +222,7 @@ const Index = () => {
               placeholder="Ваш телефон" 
               className="px-4 py-3 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-white"
             />
-            <Button className="bg-white text-green-800 hover:bg-gray-200 whitespace-nowrap">
+            <Button className="bg-white text-forest hover:bg-gray-200 whitespace-nowrap">
               Получить консультацию
             </Button>
           </div>

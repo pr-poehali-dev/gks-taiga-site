@@ -1,13 +1,13 @@
-
 import type { Config } from "tailwindcss";
 
-const config = {
+const config: Config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+    "./index.html",
   ],
   prefix: "",
   theme: {
@@ -20,10 +20,19 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ['Montserrat', 'sans-serif'],
-        heading: ['Montserrat', 'sans-serif'],
+        sans: ["Montserrat", "sans-serif"],
       },
       colors: {
+        forest: {
+          DEFAULT: "#2A4F2E",
+          dark: "#1E3A21",
+          light: "#3C6E41",
+        },
+        taiga: {
+          DEFAULT: "#455A47",
+          dark: "#2A372C",
+          light: "#5E7861",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -57,14 +66,6 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: "hsl(var(--sidebar-background))",
-        "sidebar-foreground": "hsl(var(--sidebar-foreground))",
-        "sidebar-muted": "hsl(var(--sidebar-muted))",
-        "sidebar-muted-foreground": "hsl(var(--sidebar-muted-foreground))",
-        "sidebar-accent": "hsl(var(--sidebar-accent))",
-        "sidebar-accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-        "sidebar-border": "hsl(var(--sidebar-border))",
-        "sidebar-ring": "hsl(var(--sidebar-ring))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -80,14 +81,35 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "fade-in": {
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        "fade-out": {
+          "0%": { opacity: "1", transform: "translateY(0)" },
+          "100%": { opacity: "0", transform: "translateY(10px)" },
+        },
+        shine: {
+          "0%": { backgroundPosition: "0% center" },
+          "100%": { backgroundPosition: "200% center" },
+        },
+        pulse: {
+          "0%": { boxShadow: "0 0 0 0 rgba(255, 255, 255, 0.5)" },
+          "70%": { boxShadow: "0 0 0 10px rgba(255, 255, 255, 0)" },
+          "100%": { boxShadow: "0 0 0 0 rgba(255, 255, 255, 0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "fade-in 0.3s ease-out",
+        "fade-out": "fade-out 0.3s ease-out",
+        "shine": "shine 4s linear infinite",
+        "pulse": "pulse 2s infinite",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-} satisfies Config;
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+};
 
 export default config;
