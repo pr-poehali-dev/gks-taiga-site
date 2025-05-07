@@ -2,44 +2,59 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Icon from '@/components/ui/icon';
+import MobileMenu from "@/components/ui/mobile-menu";
 
 const Index = () => {
+  const navLinks = [
+    { href: "/", label: "Главная" },
+    { href: "/projects", label: "Проекты домов" },
+    { href: "/about", label: "О компании" },
+    { href: "/blog", label: "Блог" },
+    { href: "/contacts", label: "Контакты" }
+  ];
+
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-gray-50">
       {/* Навигация */}
-      <header className="fixed w-full bg-black/20 backdrop-blur-sm z-50">
+      <header className="fixed w-full z-50 bg-black/20 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
             <span className="text-xl font-bold text-white">ГКС ТАЙГА</span>
           </div>
           <nav className="hidden md:flex items-center gap-8">
-            <Link to="/" className="text-white hover:text-gray-300 transition">Главная</Link>
-            <Link to="/projects" className="text-white hover:text-gray-300 transition">Проекты домов</Link>
-            <Link to="/about" className="text-white hover:text-gray-300 transition">О компании</Link>
-            <Link to="/blog" className="text-white hover:text-gray-300 transition">Блог</Link>
-            <Link to="/contacts" className="text-white hover:text-gray-300 transition">Контакты</Link>
+            {navLinks.map((link, index) => (
+              <Link 
+                key={index} 
+                to={link.href} 
+                className="text-white hover:text-gray-300 transition"
+              >
+                {link.label}
+              </Link>
+            ))}
           </nav>
           <div className="md:hidden">
-            <Button variant="ghost" size="icon" className="text-white">
-              <Icon name="Menu" />
-            </Button>
+            <MobileMenu links={navLinks} />
           </div>
         </div>
       </header>
 
       {/* Главный баннер */}
       <section className="relative h-screen">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://cdn.poehali.dev/files/95af27e5-8b86-4b95-bc79-d61fb1e6f94b.jpg')" }}>
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+          style={{ backgroundImage: "url('https://cdn.poehali.dev/files/49abcf54-a76c-4bd5-bcc8-b97c5549187f.jpg')" }}
+        >
           <div className="absolute inset-0 bg-black/30"></div>
         </div>
         <div className="relative container mx-auto px-4 h-full flex flex-col items-center justify-center text-center">
           <div className="mb-6">
-            <h1 className="text-7xl md:text-9xl font-bold text-white tracking-widest">ТАЙГА</h1>
-            <p className="text-sm text-white tracking-[0.3em] uppercase mt-2">MADE IN RUSSIA</p>
+            <h1 className="text-7xl md:text-9xl font-bold text-white hero-text-animated tracking-widest">ТАЙГА</h1>
+            <p className="text-xl text-white mt-4">Проверь себя на прочность в лесах Сибири</p>
           </div>
-          <p className="text-xl text-white mb-8 max-w-2xl">Каркасные дома из экологичных материалов сибирской тайги</p>
-          <Button className="bg-white text-black hover:bg-gray-200 transition-colors px-8 py-6 text-lg">
-            ЗАКАЗАТЬ ПРОЕКТ
+          <Button 
+            className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-gray-900 transition-colors duration-300 px-8 py-6 text-lg button-pulse"
+          >
+            БРОСИТЬ ВЫЗОВ
           </Button>
         </div>
       </section>
@@ -60,11 +75,11 @@ const Index = () => {
               русского леса, соединяя в себе вековые традиции деревянного 
               зодчества и современные технологии строительства.
             </p>
-            <div className="flex justify-center gap-4">
+            <div className="flex flex-col md:flex-row justify-center gap-4">
               <Button variant="outline" className="border-gray-400 text-gray-800">
                 Подробнее о компании
               </Button>
-              <Button>Наши технологии</Button>
+              <Button className="bg-green-800 hover:bg-green-900">Наши технологии</Button>
             </div>
           </div>
         </div>
@@ -227,11 +242,13 @@ const Index = () => {
             <div>
               <h3 className="text-lg font-bold mb-4">Навигация</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><Link to="/" className="hover:text-white transition">Главная</Link></li>
-                <li><Link to="/projects" className="hover:text-white transition">Проекты домов</Link></li>
-                <li><Link to="/about" className="hover:text-white transition">О компании</Link></li>
-                <li><Link to="/blog" className="hover:text-white transition">Блог</Link></li>
-                <li><Link to="/contacts" className="hover:text-white transition">Контакты</Link></li>
+                {navLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link to={link.href} className="hover:text-white transition">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
             <div>
