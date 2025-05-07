@@ -29,167 +29,183 @@ const Index = () => {
 
       {/* Главный баннер */}
       <section className="relative h-screen">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://cdn.poehali.dev/files/49abcf54-a76c-4bd5-bcc8-b97c5549187f.jpg')" }}>
-          <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://cdn.poehali.dev/files/95af27e5-8b86-4b95-bc79-d61fb1e6f94b.jpg')" }}>
+          <div className="absolute inset-0 bg-black/30"></div>
         </div>
         <div className="relative container mx-auto px-4 h-full flex flex-col items-center justify-center text-center">
-          <h1 className="text-6xl md:text-8xl font-bold text-white mb-4 tracking-wider">ТАЙГА</h1>
-          <p className="text-xl text-white mb-8 max-w-2xl">Проверь себя на прочность в лесах Сибири</p>
+          <div className="mb-6">
+            <h1 className="text-7xl md:text-9xl font-bold text-white tracking-widest">ТАЙГА</h1>
+            <p className="text-sm text-white tracking-[0.3em] uppercase mt-2">MADE IN RUSSIA</p>
+          </div>
+          <p className="text-xl text-white mb-8 max-w-2xl">Каркасные дома из экологичных материалов сибирской тайги</p>
           <Button className="bg-white text-black hover:bg-gray-200 transition-colors px-8 py-6 text-lg">
-            БРОСИТЬ ВЫЗОВ
+            ЗАКАЗАТЬ ПРОЕКТ
           </Button>
+        </div>
+      </section>
+
+      {/* О нас */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8">ГКС ТАЙГА — натуральное качество</h2>
+            <p className="text-gray-600 mb-6 text-lg">
+              Мы строим каркасные дома из экологически чистых материалов, 
+              заготовленных в сердце сибирской тайги. Наша задача — создать 
+              для вас жилье, которое будет не только комфортным, но и максимально 
+              приближенным к природе.
+            </p>
+            <p className="text-gray-600 mb-10 text-lg">
+              Каждый дом, созданный нашими мастерами, отражает красоту и силу 
+              русского леса, соединяя в себе вековые традиции деревянного 
+              зодчества и современные технологии строительства.
+            </p>
+            <div className="flex justify-center gap-4">
+              <Button variant="outline" className="border-gray-400 text-gray-800">
+                Подробнее о компании
+              </Button>
+              <Button>Наши технологии</Button>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Преимущества */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">Почему выбирают наши каркасные дома</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center">Преимущества каркасных домов</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <div className="w-12 h-12 bg-gray-800 flex items-center justify-center rounded-full mb-4">
-                <Icon name="Timer" className="text-white" />
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+              <div className="w-12 h-12 bg-green-50 flex items-center justify-center rounded-full mb-4">
+                <Icon name="Timer" className="text-green-800" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Быстрое строительство</h3>
-              <p className="text-gray-600">Каркасный дом строится в 2-3 раза быстрее, чем кирпичный или бетонный.</p>
+              <h3 className="text-xl font-bold mb-2">Быстрое возведение</h3>
+              <p className="text-gray-600">Строительство каркасного дома занимает от 2 до 4 месяцев, что в разы быстрее традиционных технологий.</p>
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <div className="w-12 h-12 bg-gray-800 flex items-center justify-center rounded-full mb-4">
-                <Icon name="Snowflake" className="text-white" />
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+              <div className="w-12 h-12 bg-green-50 flex items-center justify-center rounded-full mb-4">
+                <Icon name="ThermometerSnowflake" className="text-green-800" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Тепло и экономично</h3>
-              <p className="text-gray-600">Отличная теплоизоляция позволяет экономить на отоплении даже в сибирские морозы.</p>
+              <h3 className="text-xl font-bold mb-2">Энергоэффективность</h3>
+              <p className="text-gray-600">Современные утеплители и технологии строительства обеспечивают отличную теплоизоляцию и экономию на отоплении.</p>
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <div className="w-12 h-12 bg-gray-800 flex items-center justify-center rounded-full mb-4">
-                <Icon name="Banknote" className="text-white" />
+            <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+              <div className="w-12 h-12 bg-green-50 flex items-center justify-center rounded-full mb-4">
+                <Icon name="Leaf" className="text-green-800" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Доступная цена</h3>
-              <p className="text-gray-600">Стоимость каркасного дома значительно ниже традиционного строительства.</p>
+              <h3 className="text-xl font-bold mb-2">Экологичность</h3>
+              <p className="text-gray-600">Мы используем только сертифицированные природные материалы, безопасные для здоровья и окружающей среды.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Популярные проекты */}
+      {/* Каталог проектов */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">Популярные проекты</h2>
+          <h2 className="text-3xl font-bold mb-4 text-center">Каталог проектов</h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            Выберите готовый проект или закажите индивидуальное проектирование дома вашей мечты
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((item) => (
-              <div key={item} className="group overflow-hidden rounded-lg shadow-md bg-white">
+            {[
+              {name: "Кедр", area: 80, bedrooms: 2, bath: 1, image: "1551260"},
+              {name: "Сосна", area: 120, bedrooms: 3, bath: 2, image: "1551292"},
+              {name: "Ель", area: 150, bedrooms: 4, bath: 2, image: "1558769"}
+            ].map((project, idx) => (
+              <div key={idx} className="group overflow-hidden rounded-lg shadow-sm border border-gray-200 bg-white">
                 <div className="relative h-64 overflow-hidden">
                   <img 
-                    src={`https://images.unsplash.com/photo-155179486${item}0-6b5e5052316${item}?w=800&auto=format&fit=crop`} 
-                    alt={`Проект дома ${item}`}
+                    src={`https://images.unsplash.com/photo-${project.image}4-4d3fea1eaaf8?w=800&auto=format&fit=crop`} 
+                    alt={`Проект дома ${project.name}`}
                     className="w-full h-full object-cover transition-transform group-hover:scale-105"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent py-4 px-4">
-                    <h3 className="text-white text-xl font-bold">{`Проект "Тайга-${item < 10 ? '0' + item : item}"`}</h3>
+                    <h3 className="text-white text-xl font-bold">{`"${project.name}"`}</h3>
                   </div>
                 </div>
                 <div className="p-6">
                   <div className="flex gap-4 mb-4">
                     <div className="flex items-center gap-1">
                       <Icon name="LayoutGrid" size={16} />
-                      <span className="text-sm">{`${item * 50 + 50} м²`}</span>
+                      <span className="text-sm">{`${project.area} м²`}</span>
                     </div>
                     <div className="flex items-center gap-1">
                       <Icon name="Bed" size={16} />
-                      <span className="text-sm">{`${item + 1} спал.`}</span>
+                      <span className="text-sm">{`${project.bedrooms} спал.`}</span>
                     </div>
                     <div className="flex items-center gap-1">
                       <Icon name="Bath" size={16} />
-                      <span className="text-sm">{`${item} ванн.`}</span>
+                      <span className="text-sm">{`${project.bath} ванн.`}</span>
                     </div>
                   </div>
-                  <p className="text-gray-600 mb-4">Компактный и уютный каркасный дом для комфортной жизни.</p>
-                  <Button variant="outline" className="w-full">Подробнее</Button>
+                  <p className="text-gray-600 mb-4">Современный каркасный дом с просторной планировкой и панорамными окнами.</p>
+                  <Button variant="outline" className="w-full border-green-800 text-green-800 hover:bg-green-800 hover:text-white">Подробнее</Button>
                 </div>
               </div>
             ))}
           </div>
           <div className="text-center mt-10">
-            <Button variant="default" className="px-8">Смотреть все проекты</Button>
+            <Button variant="default" className="px-8 bg-green-800 hover:bg-green-900">Все проекты домов</Button>
           </div>
         </div>
       </section>
 
-      {/* Процесс работы */}
+      {/* Этапы работы */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">Как мы работаем</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <h2 className="text-3xl font-bold mb-12 text-center">Этапы строительства</h2>
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
             {[
-              {icon: "PencilRuler", title: "Проектирование", desc: "Разработка индивидуального проекта или адаптация типового"},
-              {icon: "Calculator", title: "Смета", desc: "Точный расчет стоимости строительства"},
-              {icon: "Hammer", title: "Строительство", desc: "Реализация проекта опытными строителями"},
-              {icon: "CheckCircle", title: "Сдача объекта", desc: "Передача готового дома с гарантией"}
+              {icon: "Pencil", title: "Проектирование", desc: "Разработка проекта с учетом всех пожеланий"},
+              {icon: "FileText", title: "Договор", desc: "Заключение договора и составление сметы"},
+              {icon: "Shovel", title: "Фундамент", desc: "Заливка фундамента и подготовка площадки"},
+              {icon: "Frame", title: "Каркас", desc: "Монтаж каркаса и установка стен"},
+              {icon: "Home", title: "Отделка", desc: "Внешняя и внутренняя отделка дома"}
             ].map((step, idx) => (
-              <div key={idx} className="flex flex-col items-center text-center">
-                <div className="relative w-16 h-16 flex items-center justify-center mb-4">
-                  <div className="absolute w-16 h-16 rounded-full bg-gray-200 opacity-30"></div>
-                  <div className="absolute w-12 h-12 rounded-full bg-gray-200 opacity-70"></div>
-                  <div className="absolute w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center">
-                    <Icon name={step.icon} className="text-white" />
-                  </div>
+              <div key={idx} className="relative p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+                <div className="absolute -top-4 left-6 w-8 h-8 rounded-full bg-green-800 flex items-center justify-center text-white">
+                  {idx + 1}
                 </div>
-                <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-                <p className="text-gray-600">{step.desc}</p>
+                <div className="pt-4">
+                  <Icon name={step.icon} className="text-green-800 mb-3" />
+                  <h3 className="text-lg font-bold mb-2">{step.title}</h3>
+                  <p className="text-gray-600 text-sm">{step.desc}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* О нас */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold mb-6">О компании ГКС ТАЙГА</h2>
-              <p className="text-gray-600 mb-4">
-                Компания ГКС ТАЙГА специализируется на строительстве каркасных домов в сибирском регионе. 
-                Мы создаем надежные и теплые дома, которые выдерживают суровые климатические условия.
-              </p>
-              <p className="text-gray-600 mb-6">
-                Наши дома отличаются высоким качеством, энергоэффективностью и современным дизайном, 
-                при этом мы сохраняем доступные цены и разумные сроки строительства.
-              </p>
-              <Button variant="default">Подробнее о компании</Button>
-            </div>
-            <div className="relative">
-              <div className="absolute -top-5 -left-5 w-24 h-24 bg-gray-200 rounded-lg"></div>
-              <img 
-                src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?w=800&auto=format&fit=crop" 
-                alt="Команда ГКС ТАЙГА" 
-                className="relative rounded-lg shadow-xl w-full"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
-      <section className="py-24 bg-gray-900 text-white">
+      <section className="py-24 bg-green-800 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">Готовы построить дом своей мечты?</h2>
-          <p className="max-w-2xl mx-auto mb-8 text-gray-300">
-            Закажите бесплатную консультацию, и мы поможем выбрать проект, рассчитаем стоимость и ответим на все вопросы
+          <h2 className="text-3xl font-bold mb-6">Построим дом вашей мечты</h2>
+          <p className="max-w-2xl mx-auto mb-8 text-gray-200">
+            Оставьте заявку на бесплатную консультацию, и наш специалист свяжется с вами в ближайшее время
           </p>
-          <Button className="bg-white text-black hover:bg-gray-200 transition-colors px-8 py-6 text-lg">
-            ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ
-          </Button>
+          <div className="flex flex-col md:flex-row gap-4 max-w-md mx-auto">
+            <input 
+              type="tel" 
+              placeholder="Ваш телефон" 
+              className="px-4 py-3 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-white"
+            />
+            <Button className="bg-white text-green-800 hover:bg-gray-200 whitespace-nowrap">
+              Получить консультацию
+            </Button>
+          </div>
+          <p className="text-xs mt-4 text-gray-200">Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности</p>
         </div>
       </section>
 
       {/* Футер */}
-      <footer className="bg-gray-800 text-white py-12">
+      <footer className="bg-gray-900 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <h3 className="text-xl font-bold mb-4">ГКС ТАЙГА</h3>
-              <p className="text-gray-400">Строительство каркасных домов, которые выдержат испытание сибирской тайгой.</p>
+              <p className="text-gray-400">Строительство экологичных каркасных домов из материалов сибирской тайги</p>
             </div>
             <div>
               <h3 className="text-lg font-bold mb-4">Контакты</h3>
@@ -204,7 +220,7 @@ const Index = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <Icon name="MapPin" size={16} />
-                  <span>г. Новосибирск, ул. Примерная, 123</span>
+                  <span>г. Новосибирск, ул. Лесная, 42</span>
                 </li>
               </ul>
             </div>
@@ -221,22 +237,22 @@ const Index = () => {
             <div>
               <h3 className="text-lg font-bold mb-4">Мы в соцсетях</h3>
               <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition">
+                <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition">
                   <Icon name="Instagram" size={20} />
                 </a>
-                <a href="#" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition">
-                  <Icon name="Facebook" size={20} />
+                <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition">
+                  <Icon name="VkLogo" fallback="Dribbble" size={20} />
                 </a>
-                <a href="#" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition">
-                  <Icon name="Youtube" size={20} />
+                <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition">
+                  <Icon name="YoutubeLogo" fallback="Youtube" size={20} />
                 </a>
-                <a href="#" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition">
-                  <Icon name="Telegram" size={20} />
+                <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition">
+                  <Icon name="TelegramLogo" fallback="Send" size={20} />
                 </a>
               </div>
             </div>
           </div>
-          <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-500">
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
             <p>© {new Date().getFullYear()} ГКС ТАЙГА. Все права защищены.</p>
           </div>
         </div>
